@@ -5,6 +5,9 @@ const goods = [
   { title: 'Shoes', price: 250 },
 ];
 
+const GET_GOODS_ITEMS = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/catalogData.json'
+const GET_BASKET_GOODS_ITEMS = 'https://raw.githubugsercontent.com/GeekBrainsTutorial/online-store-api/master/responses/getBasket.json'
+
 class GoodsItem {
   constructor({ title, price }) {
     this.title = title;
@@ -19,6 +22,8 @@ class GoodsItem {
   `;
   }
 }
+
+//Noviy commit typo 3
 
 class GoodsList {
   items = [];
@@ -35,6 +40,16 @@ class GoodsList {
       return goodsItem.render()
     }).join('');
     document.querySelector('.goods-list').innerHTML = goods;
+  }
+}
+
+class BasketGoods {
+  items = [];
+  fetchGoods(callback) {
+    service(GET_BASKET_GOODS_ITEMS, (data) => {
+      this.items = data;
+      callback()
+    });
   }
 }
 
