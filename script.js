@@ -56,3 +56,5 @@ class BasketGoods {
 const goodsList = new GoodsList();
 goodsList.fetchGoods();
 goodsList.render();
+
+// ghhhhhh
