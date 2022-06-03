@@ -23,6 +23,8 @@ class GoodsItem {
   }
 }
 
+//Noviy commit typo 3
+
 class GoodsList {
   items = [];
   fetchGoods() {
